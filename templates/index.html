@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> 
+</head>
+<body>
+ <div class="login">
+	<h1>Predict Hand Posture</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+      <input type="text" name="X0" placeholder="X0" required="required" />
+      <input type="text" name="Y0" placeholder="Y0" required="required" />
+      <input type="text" name="Z0" placeholder="Z0" required="required" />
+      <input type="text" name="X1" placeholder="X1" required="required" />
+      <input type="text" name="Y1" placeholder="Y1" required="required" />
+      <input type="text" name="Z1" placeholder="Z1" required="required" />
+      <input type="text" name="X2" placeholder="X2" required="required" />
+      <input type="text" name="Y2" placeholder="Y2" required="required" />
+      <input type="text" name="Z2" placeholder="Z2" required="required" />
+      <input type="text" name="X3" placeholder="X3" required="required" />
+      <input type="text" name="Y3" placeholder="Y3" required="required" />
+      <input type="text" name="Z3" placeholder="Z3" required="required" />
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict Posture</button>
+    </form>
+   <br>
+   <br>
+   {{ prediction_text }}
+ </div>
+</body>
+</html>
